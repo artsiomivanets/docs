@@ -1,0 +1,31 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(ta_admin, "Tire Apent Administrator", "A person who processes orders")
+Person(pp_admin, "PayPair Administrator", "A person who processes lenders and offers")
+Person(ip_admin, "Installers Portal Administrator", "A person who create new installers")
+Person(ip_manager, "Installer Manager", "A person who processes job request")
+Person(ta_user, "User", "A person who wants to buy tires, wheels, etc")
+
+System_Boundary(ta_system, "Tire Agent System") {
+    Container(ta_app, "Tire Apent Site", "", "")
+    Container(pp_app, "PayPair Widget", "", "")
+    Container(ip_app, "Installers Portal", "", "")
+    Container(sp_app, "Suppliers Portal", "", "")
+    Container(wp_app, "Warehouse Portal", "", "")
+
+    Rel(ta_app, pp_app, "Redirects the user to apply for a loan", "Open Widget")
+    Rel(ta_app, ip_app, "Send new job request", "")
+    Rel(ta_app, sp_app, "Something???", "")
+    Rel(ta_app, wp_app, "Something???", "")
+}
+
+Rel(ta_admin, ta_app, "Processes orders")
+Rel(ta_user, ta_app, "Search and buy tires, wheels, etc")
+Rel(ta_user, pp_app, "Gets loans", "Enters personal data, Chechs offers, Selects and Accepts one of them")
+Rel(pp_admin, pp_app, "Manage lenders and offers", "Opens/Closes providers, views offers, Refunds/Cancels/Resets offers, Checks analytics")
+Rel(ip_admin, ip_app, "Manage installers and job requests", "Edits/Creates installers, Checks job requests")
+Rel(ip_manager, ip_app, "Manage job requests", "Gets/Schedules/Cancels job requests")
+@enduml

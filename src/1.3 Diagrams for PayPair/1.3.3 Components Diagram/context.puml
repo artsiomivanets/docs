@@ -1,0 +1,47 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Container(pp_fe_app, "PayPair Widget", "React.js", "Provides all functionality of the PayPair to end-user via browser")
+Container(pp_admin_panel, "PayPair Admin Panel", "Ruby or Rails + JS", "Allows admin manage users and offers")
+ContainerDb(db, "Database", "PostgresQL", "Stores user infomation, informations about user requests and provider's offers")
+System_Ext(lenders, "Lenders", "API of different creditors")
+System_Ext(sms, "Sms system", "System for sends SMS")
+
+System_Boundary(pp_system, "PayPair Backend System") {
+    Component(providers, "Providers", "Ruby or Rails", "Communicates with lenders. Sends requests, receives and processes offers")
+    Component(users, "Users", "Ruby or Rails", "Allows users to create their loans")
+    Component(merchants, "Merchants", "Ruby or Rails", "Allows admin to manage lenders, offers")
+    Component(lease_applications, "LeaseApplications", "Ruby or Rails", "description")
+    Component(provider_clients, "Providers client", "Ruby or Rails", "Sends requests to providers")
+    Component(autentification, "Autentification", "Ruby or Rails", "Determines if this is a new or returning user")
+    Component(opt, "Otp Service", "Ruby or Rails")
+}
+
+Rel(provider_clients, lenders, "Gets offers form providers", "JSON/HTTPS")
+Rel(opt, sms, "Uses", "JSON/HTTPS")
+
+Rel(pp_fe_app, users, "Uses", "JSON/HTTPS")
+Rel(pp_fe_app, providers, "Uses", "JSON/HTTPS")
+Rel(pp_fe_app, lease_applications, "Uses", "JSON/HTTPS")
+Rel(pp_fe_app, autentification, "Uses", "JSON/HTTPS")
+Rel(autentification, opt, "Uses", "JSON/HTTPS")
+
+Rel(pp_admin_panel, merchants, "Uses", "JSON/HTTPS")
+Rel(pp_admin_panel, users, "Uses", "JSON/HTTPS")
+Rel(pp_admin_panel, providers, "Uses", "JSON/HTTPS")
+Rel(pp_admin_panel, lease_applications, "Uses", "JSON/HTTPS")
+Rel(pp_admin_panel, autentification, "Uses", "JSON/HTTPS")
+
+Rel(merchants, providers, "Uses", "Object call")
+
+Rel(providers, provider_clients, "Uses", "Object call")
+
+Rel(providers, db, "Reads and writes", "Rails Active Record ORM")
+Rel(users, db, "Reads and writes", "Rails Active Record ORM")
+Rel(lease_applications, db, "Reads and writes", "Rails Active Record ORM")
+Rel(merchants, db, "Reads and writes", "Rails Active Record ORM")
+Rel(providers, db, "Reads and writes", "Rails Active Record ORM")
+@enduml

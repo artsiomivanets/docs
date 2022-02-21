@@ -1,0 +1,44 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+skinparam rectangle<<test>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+    BackgroundColor #FFFFFF
+}
+
+Person(pp_admin, "PayPair Administrator", "Admin of PayPair system")
+Person(pp_user, "User", "A person who wants to buy tires, wheels by loan")
+
+System_Boundary(pp_system, "PayPair System") {
+    Container(pp_be_app, "PayPair Backend", "Ruby or Rails", "Provides PayPair functionality via JSON/HTTPS")
+    Container(pp_admin_panel, "PayPair Admin Panel", "Ruby or Rails + JS", "Allows admin manage users and offers")
+    Container(pp_fe_app, "PayPair Widget", "React.js", "Allows users get, check and choose loans")
+    ContainerDb(db, "Database", "PostgresQL", "Stores user infomation, informations about user requests and provider's offers")
+
+    rectangle "==Lenders" <<test>> as lenders_system {
+        Container(fs_provider, "Flexshopper lender", "")
+        Container(pt_provider, "Paytomorrow lender", "")
+        Container(ok_provider, "Okinus lender", "")
+        Container(uo_provider, "Uown lender", "")
+        Container(tp_provider, "Tempoe lender", "")
+        Container(af_provider, "Aff lender", "")
+        Container(ac_provider, "Acima lender", "")
+    }
+
+    Rel(pp_be_app, lenders_system, "Send user data")
+    Rel(lenders_system, pp_be_app, "Send offers")
+}
+
+Rel(pp_user, pp_fe_app, "Requsts, views, compares, accepts loans")
+Rel(pp_admin, pp_admin_panel, "Manages users, lenders and offers")
+Rel(pp_fe_app, pp_be_app, "Make API calls", "JSON/HTTPS")
+Rel(pp_admin_panel, pp_be_app, "Uses")
+Rel(pp_be_app, db, "Reads and writes", "Rails Active Record ORM")
+
+@enduml
