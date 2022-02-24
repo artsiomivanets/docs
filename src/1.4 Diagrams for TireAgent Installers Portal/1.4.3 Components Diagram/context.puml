@@ -1,0 +1,46 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Container(ip_admin_panel, "Installer Portal Admin Panel", "Ruby or Rails + JS", "Allows admin manage installers and apointments")
+ContainerDb(db, "Database", "PostgresQL", "Stores appointments and installers information")
+System_Ext(e_mail, "E-mail system", "System for sending emails")
+Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+
+System_Boundary(ip_system, "Installer Porta Backend System") {
+    Component(autentification, "Autentification", "Ruby or Rails", "Allows users to sign in, sign up and recovery password")
+    Component(appointment, "Appointment", "Ruby or Rails", "???")
+    Component(installer, "Installer Account", "Ruby or Rails", "Allows installers to manage appointments")
+    Component(order, "Order", "Ruby or Rails", "???")
+    Component(schedule, "Schedule", "Ruby or Rails", "Allows installers to manage schedule")
+    Component(tireagent_connection, "Tire Agent Connection", "Ruby or Rails", "Sends requests to TIre Agent")
+    Component(location, "Location", "Ruby or Rails", "Allows installers to manage location")
+    Component(bg_jobs, "Background Jobs", "Ruby or Rails", "Runtime for background tasks")
+}
+
+Rel(ip_admin_panel, appointment, "Uses", "JSON/HTTPS")
+Rel(ip_admin_panel, installer, "Uses", "JSON/HTTPS")
+Rel(ip_admin_panel, autentification, "Uses", "JSON/HTTPS")
+Rel(autentification, bg_jobs, "Send registration emails")
+Rel(bg_jobs, e_mail, "Sends emails")
+
+Rel(installer, schedule, "Uses")
+Rel(installer, order, "Uses")
+Rel(installer, location, "Uses")
+Rel(installer, appointment, "Uses")
+Rel(appointment, schedule, "Uses")
+Rel(order, appointment, "Uses")
+Rel(order, tireagent_connection, "Uses")
+Rel(tireagent_connection, ta, "Update order's status with installation option", "JSON/HTTPS")
+
+
+Rel(autentification, db, "Reads and writes", "Rails Active Record ORM")
+Rel(appointment, db, "Reads and writes", "Rails Active Record ORM")
+Rel(installer, db, "Reads and writes", "Rails Active Record ORM")
+Rel(schedule, db, "Reads and writes", "Rails Active Record ORM")
+Rel(order, db, "Reads and writes", "Rails Active Record ORM")
+Rel(location, db, "Reads and writes", "Rails Active Record ORM")
+
+@enduml
