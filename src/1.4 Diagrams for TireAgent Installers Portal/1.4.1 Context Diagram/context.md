@@ -1,7 +1,3 @@
-# 1.3.4 Entity Diagram
-
-![diagram](https://www.plantuml.com/plantuml/svg/0/SoWkIImgAStDuLACJibCJ2zAp8tLqDFJJqaiITGF28ZFp4rCJzLBAKeipypNAyXBr-HoICrB0Qa70000)
-
 **Level 2: Container diagram**
 
 Once you understand how your system fits in to the overall IT environment, a really useful next step is to zoom-in to the system boundary with a Container diagram. A "container" is something like a server-side web application, single-page application, desktop application, mobile app, database schema, file system, etc. Essentially, a container is a separately runnable/deployable unit (e.g. a separate process space) that executes code or stores data.
