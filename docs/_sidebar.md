@@ -12,4 +12,8 @@
     * [1.4.3 Components Diagram](1.4%20Diagrams%20for%20TireAgent%20Installers%20Portal/1.4.3%20Components%20Diagram/HOME)
     * [1.4.4 Entity Diagram](1.4%20Diagrams%20for%20TireAgent%20Installers%20Portal/1.4.4%20Entity%20Diagram/HOME)
     * [1.4.5 Activity Diagram](1.4%20Diagrams%20for%20TireAgent%20Installers%20Portal/1.4.5%20Activity%20Diagram/HOME)
+  * [1.6 Diagrams for TireAgent Supplier Portal](1.6%20Diagrams%20for%20TireAgent%20Supplier%20Portal/HOME)
+    * [1.6.1 Context Diagram](1.6%20Diagrams%20for%20TireAgent%20Supplier%20Portal/1.6.1%20Context%20Diagram/HOME)
+    * [1.6.2 Containers Diagram](1.6%20Diagrams%20for%20TireAgent%20Supplier%20Portal/1.6.2%20Containers%20Diagram/HOME)
+    * [1.6.3 Components Diagram](1.6%20Diagrams%20for%20TireAgent%20Supplier%20Portal/1.6.3%20Components%20Diagram/HOME)
   * [data](data/HOME)
