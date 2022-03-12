@@ -1,18 +1,23 @@
 # 1.3.3 Components Diagram
 
-![diagram](https://www.plantuml.com/plantuml/svg/0/jLPDSzem4BtpAxPSIgO97DfJJo4Vau-1G36PJ4-Ci1TGAakk94FJJlzxLn8sTd0oD9rooRBiUxlxTYNbr5YcRPwArZikOv4d22jhC_EvrzDiqrrokyhdkK4TAsbHscwiqXvBD6ToBV8ixvr_EXaB9ktzSD0JpAAnv9gTKpJZ4dKt-m_SQQQaY_VShK7_w-X-EdkucLxF1fTNbtSNdQDMgwoWasMp1SvObXr3UyoUnenhUE394csRF1DaiUq-6cUFjLhp10qm8M2HozXo9PdWzWdK0kmAeS1R1IYJ4rSyh3c3kLORijj7zRmiIRcSPKoYg2JlEozHaTTNaC-9NyE4SM7W0zn6pjiNWYZ1Cq3A95iYk7JaaWcLio2pckvYtadcXBjWbisPGT-FCdQfqNmPk6-HLMHx4k1oeLBcsZlsjWvVY7okSXjYD7xFIVAGC0lIwFTcbpjwCXRJsUKFsn6a1Zafoo1OleNnZTCjuGv0yu9OOyAfYcTWapfWb1emtkcBzHPGPM28qK0qZEeebhAVhlnstniGVIoQ9Aaej8WzKxbCc7voymZybL6SiVWRqKE8RH_1hnRGfronJj6tsQr7QAusDUSWJ9fB7hizXGtjDcn5wKBaEoZqF2OhHhx6KjaOZS6AiFKI_DGfmRrvAVLsLy9wq6gIpbI5MrXgKIWczqbJEdKhEbgEU5ZOhv67HIJoxIwM4t-XQe6qXExK2IU9sos_7EJiLtoD6Ua4nffdBc2FjfZ7B1OSG_dbM23u6Zdh8t1zb9FToy5oTnlnnRP8fq7TqvZX0YrgqeW6oTrbmUaloGOIDovEeysrv7BfnxINKsMME4OsesNHQnxZVexd48sPqjPVOSvu6RXj7mB04VrkjIOe6iJSdUChjCL6kbEOLlIYNs-ZqLtlUZeTkqFfg7pzuI3Jdkx7X7oxcxYorCs4bTZg6Jmald7r3W7k3_v5r5ve6E2hlTTUW-e1VAss6kWGrMg0GwMhWVvQlnhwG14zjY92KwMZ-IF6z6pGSrpAk0jhk0eE0_ftajxz95p06yrjW8KNk4_F_XfXWh7I2OmcmssZM_7VY6uIzOrK5TNUoF3lOXINJ_aAbwzJRSgdT9-uVzB-0000)
+![diagram](https://www.plantuml.com/plantuml/svg/0/jLPDSzem4BtpAxPSIgO97DfJJo4Vau-1G36PJ4-Ci1UYL9PSIORIJlzxLn8sTd0oD9rooRBiUxlxTYNbr5YcRPwArZikOv4d28_MPkPphwVPkhlazZ6VvmPrhAH5QRknIdiiqPp9bSYpl7V-wMGicBJtmq5FC8l6acjsJj6CIzJTx3zmfvcIBjvpjmRzhwFxwUpXPdez6rnUNTvTT8vQhRA2JfRD5ZXZMNOCxJ7RZ1dNyC2J9TesUIR8OjjzCiuUQxNY2HfWGi0Ybx7bIZB1xGRK0kmZGe6t2b0c9wvuM746SwtMPBUFwdbPad8vovX4KKdUTrwY8g-l89yJluO9uyB01xYDdBSl1562Pu2KIRP4SEd89HCgPq5cDTt5l9FC2NV1B9ipWxuVPUnIe_aoSDyYgyZs9C3bGgNCjNViRHs-4FbSvJR4QFoUa-GXOHQaqU_DBdUqCHRJsUKFsn6a1Zafoo1OleNnZTCjuGv0yu9OOyAfYcTWapfWb1emtkcBzHPGPM28qK0qZEeebhAVhlnstniGVIoQ9Aaej8WzKxbCcDwuUGJ-oYZEMFoDw274je_WLmleKwvOf-ZRxDOZD5URcdCG9iqbZzsUmffs6xQYT27o7HHw7fCL8rzXgMoCnc15s7e9VkgKuDwyb7gxAs4zQ3L9Pwh2BIorA1IJ-wGfdRf7EbgEU5ZOhv67HIJoxIwM4t-XQe6qXExK2IU9sos_7EI4ViNPc9AEOAnvvWBsU8k1p6B1CTHVpWM2hv6pFWFNI3dQlHmiTzSHNsoBT2BKFOqPBj2Y9f5eajpT5fp-acuWSUtYDDfSIowNVavxELLcYMDaCzeMlU8nxkTu3j6OAMtz7UQCbu7RzY407D7lLck2ea7CtK6-Gbkif3k6QKKl-lKs6jtrhgVJiJkLZihN7quoBUf-JCYtkuehMzrCM8cj7i93uXjtxn3W_k1VH6th3sDxjUFQ8r0zTwzLL0CTebKDSAXWDT1VgrP37oYTnrP4QAfqD7_2c5uBUeLB6NTX3HV0OK3_FD9pduHxTwsv3R3myFRfjLyXJ31MEe7HP5WVz1lHJQA-aQgYsXiP_bsClIc_aQUukif7l7pSQjjoIhUH-n_l3m00)
 
-**Level 2: Container diagram**
+API application is a monolith application based on Ruby/Ruby on Rails. API application can be divided into two parts: Admin Panel and Backend Part. Backend logic is separated using [Interactors](https://github.com/collectiveidea/interactor). It means that the functionality of the system is divided into related parts according to the [High cohesion and low coupling](https://enterprisecraftsmanship.com/posts/cohesion-coupling-difference/) principle (the same principles are followed by microservices architecture pattern).
 
-Once you understand how your system fits in to the overall IT environment, a really useful next step is to zoom-in to the system boundary with a Container diagram. A "container" is something like a server-side web application, single-page application, desktop application, mobile app, database schema, file system, etc. Essentially, a container is a separately runnable/deployable unit (e.g. a separate process space) that executes code or stores data.
+API application consists of the following parts:
 
-The Container diagram shows the high-level shape of the software architecture and how responsibilities are distributed across it. It also shows the major technology choices and how the containers communicate with one another. It's a simple, high-level technology focussed diagram that is useful for software developers and support/operations staff alike.
+Autentification (Ruby on Rails). This module is responsible for Admin sign-in/sign up. [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) will be Admin for user authentication purposes.
 
-**Scope**: A single software system.
+User (Ruby on Rails). This module is responsible for user creating, searching existing users, checking previous approvals, authorizing etc.
 
-**Primary elements**: Containers within the software system in scope.
-Supporting elements: People and software systems directly connected to the containers.
+Otp Service (Ruby on Rails). This module is responsible for sending OTP code to users by SMS. Module can use two sms providers. These providers are managed by the administrator.
 
-**Intended audience**: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+Providers (Ruby on Rails). This module is responsible for building requests to lenders, response This module is responsible for, creating offers data. ect.
 
-**Notes**: This diagram says nothing about deployment scenarios, clustering, replication, failover, etc.
+Merchants (Ruby on Rails). This module is responsible for Admin functionality - creating admins, managing providers, checking offers and users, ect.
+
+Providers client (Ruby on Rails). This module is responsible for sending requests to providers.
+
+Lease Applications (Ruby on Rails). This module is responsible for storing users requests, calculating taxes.
+
+Report Service (Ruby on Rails). This module is responsible for creating different reports -  new users report, approved offers report, ect.

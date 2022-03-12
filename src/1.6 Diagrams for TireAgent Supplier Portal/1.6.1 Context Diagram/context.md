@@ -1,14 +1,31 @@
+<<<<<<< HEAD:docs/1.3 Diagrams for PayPair/1.3.4 Entity Diagram/HOME.md
+# 1.3.4 Entity Diagram
+
+Entity diagram describes entities in the system and relations between them.
+
+Merchant. This entity represents merchant account. It is company which use PayPaid. Each merchant has personal agreements with creditors, settings.
+=======
 **Level 2: Container diagram**
+>>>>>>> master:src/1.6 Diagrams for TireAgent Supplier Portal/1.6.1 Context Diagram/context.md
 
-Once you understand how your system fits in to the overall IT environment, a really useful next step is to zoom-in to the system boundary with a Container diagram. A "container" is something like a server-side web application, single-page application, desktop application, mobile app, database schema, file system, etc. Essentially, a container is a separately runnable/deployable unit (e.g. a separate process space) that executes code or stores data.
+Admin. This entity represents an employee who manages customers (users), creditors, offers and approvals
 
-The Container diagram shows the high-level shape of the software architecture and how responsibilities are distributed across it. It also shows the major technology choices and how the containers communicate with one another. It's a simple, high-level technology focussed diagram that is useful for software developers and support/operations staff alike.
+MerchantLpConfiguration. This entity represents the provider setting and contains the personal credentials of each provider.
 
-**Scope**: A single software system.
+Setting. This entity represents merchant settings. This contains settings such as choosing an SMS service for sending a OTP code and setting up work with providers
 
-**Primary elements**: Containers within the software system in scope.
-Supporting elements: People and software systems directly connected to the containers.
+Subscriber
 
-**Intended audience**: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+Trending. This entity represents logs. This shows whith screens user visit and where user close PayPair.
 
-**Notes**: This diagram says nothing about deployment scenarios, clustering, replication, failover, etc.
+User. This entity represents the end-user in the system.
+
+NewUser. This entity was creating for analytics. This also represents end-user but with needed data for analytics.
+
+ApplicationRequest. This entity represents loan request from user to PayPair system.
+
+LeaseApplication. This entity represents responses form providers. It shows whether the provider approved the loan request or not, information about payment schedule. It is also updated if the user took advantage of the offer or if the user after a while did cancel, refund or settle.
+
+OrderItem. This entity represents user's cart. It contains product information.
+
+RefundedItem. This entity represents items whith was refunded.
