@@ -6,8 +6,8 @@ LAYOUT_WITH_LEGEND()
 Person(pp_admin, "PayPair Administrator", "Admin of PayPair system")
 Person(pp_user, "User", "A person who wants to buy tires, wheels by loan")
 
-Container(pp_system, "PayPair", "Ruby or Rails + React.js", "The system for buying tires on credit")
-Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+Container(pp_system, "PayPair", "Ruby on Rails + React.js", "The system for buying tires on credit")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 Container(lenders, "Lenders", "List of lenders")
 

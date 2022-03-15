@@ -7,8 +7,8 @@ Person(super_admin, "Super Administrator", "Admin of Supplier portal")
 Person(supplier_admin, "Supplier Administrator", "Admin a supplier account")
 Person(employee, "Employee", "Tireagent Employee")
 
-Container(supplier_portal, "Supplier Portal", "Ruby or Rails + Hotwire", "The system to handle orders related with supplier by warehouse")
-Container(tireagent, "Tire Agent", "Ruby or Rails", "The system to sale tires")
+Container(supplier_portal, "Supplier Portal", "Ruby on Rails + Hotwire", "The system to handle orders related with supplier by warehouse")
+Container(tireagent, "Tire Agent", "Ruby on Rails", "The system to sale tires")
 
 Rel(super_admin, supplier_portal, "Manage suppliers accounts and warehouses")
 Rel(supplier_admin, supplier_portal, "Manage supplier's account")

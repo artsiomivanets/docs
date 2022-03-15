@@ -4,20 +4,20 @@
 
 LAYOUT_WITH_LEGEND()
 
-Container(ip_admin_panel, "Installer Portal Admin Panel", "Ruby or Rails + Hotwire", "Allows admin manage installers and apointments")
+Container(ip_admin_panel, "Installer Portal Admin Panel", "Ruby on Rails + Hotwire", "Allows admin manage installers and apointments")
 ContainerDb(db, "Database", "PostgresQL", "Stores appointments and installers information")
 System_Ext(e_mail, "E-mail system", "System for sending emails")
-Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 System_Boundary(ip_system, "Installer Portal Backend System") {
-    Component(autentification, "Autentification", "Ruby or Rails", "Allows users to sign in, sign up and recovery password")
-    Component(appointment, "Appointment", "Ruby or Rails", "Scheduled installations of ordered tires")
-    Component(installer, "Installer Account", "Ruby or Rails", "Allows installers to manage appointments")
-    Component(order, "Order", "Ruby or Rails", "Populated by Tireagent site and related with installer account")
-    Component(schedule, "Schedule", "Ruby or Rails", "Allows installers to manage schedule")
-    Component(tireagent_connection, "Tire Agent Connection", "Ruby or Rails", "Sends requests to Tire Agent")
-    Component(location, "Location", "Ruby or Rails", "Allows installers to manage location")
-    Component(bg_jobs, "Background Jobs", "Ruby or Rails", "Runtime for background tasks")
+    Component(autentification, "Autentification", "Ruby on Rails", "Allows users to sign in, sign up and recovery password")
+    Component(appointment, "Appointment", "Ruby on Rails", "Scheduled installations of ordered tires")
+    Component(installer, "Installer Account", "Ruby on Rails", "Allows installers to manage appointments")
+    Component(order, "Order", "Ruby on Rails", "Populated by Tireagent site and related with installer account")
+    Component(schedule, "Schedule", "Ruby on Rails", "Allows installers to manage schedule")
+    Component(tireagent_connection, "Tire Agent Connection", "Ruby on Rails", "Sends requests to Tire Agent")
+    Component(location, "Location", "Ruby on Rails", "Allows installers to manage location")
+    Component(bg_jobs, "Background Jobs", "Ruby on Rails", "Runtime for background tasks")
 }
 
 Rel(ip_admin_panel, appointment, "Uses", "JSON/HTTPS")

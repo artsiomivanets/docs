@@ -6,11 +6,11 @@ LAYOUT_WITH_LEGEND()
 Person(super_admin, "Super Administrator", "Admin of Supplier Portal")
 Person(supplier_admin, "Supplier Administrator", "Admin a supplier account")
 Person(employee, "Employee", "Tire Agent employee")
-Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 System_Boundary(pp_system, "Supplier Portal System") {
-    Container(ip_be_app, "Supplier Portal Backend", "Ruby or Rails", "Provides Supplier Portal functionality via JSON/HTTPS")
-    Container(ip_admin_panel, "Supplier Portal Admin Panel", "Ruby or Rails + Hotwire", "Allows admin manage orders, warehouses and suppliers")
+    Container(ip_be_app, "Supplier Portal Backend", "Ruby on Rails", "Provides Supplier Portal functionality via JSON/HTTPS")
+    Container(ip_admin_panel, "Supplier Portal Admin Panel", "Ruby on Rails + Hotwire", "Allows admin manage orders, warehouses and suppliers")
     ContainerDb(db, "Database", "PostgresQL", "Stores orders, warehouses and suppliers information")
 }
 

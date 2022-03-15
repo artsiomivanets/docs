@@ -4,20 +4,20 @@
 
 LAYOUT_WITH_LEGEND()
 
-Container(ip_admin_panel, "Supplier Portal Admin Panel", "Ruby or Rails + Hotwire", "Allows admin manage suppliers and apointments")
+Container(ip_admin_panel, "Supplier Portal Admin Panel", "Ruby on Rails + Hotwire", "Allows admin manage suppliers and apointments")
 ContainerDb(db, "Database", "PostgresQL", "Stores warehouse and suppliers information")
 System_Ext(e_mail, "E-mail system", "System for sending emails")
-Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 System_Boundary(ip_system, "Supplier Portal Backend System") {
-    Component(autentification, "Autentification", "Ruby or Rails", "Allows users to sign in, sign up and recovery password")
-    Component(supplier, "Supplier Account", "Ruby or Rails", "Allows suppliers to manage warehouses and orders")
-    Component(warehouse, "Warehouse", "Ruby or Rails", "Warehouse info and manage warehouse's orders")
-    Component(order, "Order", "Ruby or Rails", "Order information")
-    Component(tireagent_connection, "Tire Agent Connection", "Ruby or Rails", "Tire Agent Site Interface")
-    Component(portal_api, "API", "Ruby or Rails", "Backend Interface")
-    Component(bg_jobs, "Background Jobs", "Ruby or Rails", "Runtime for background tasks")
-    Component(shipments, "Shipments", "Ruby or Rails", "Shipments information")
+    Component(autentification, "Autentification", "Ruby on Rails", "Allows users to sign in, sign up and recovery password")
+    Component(supplier, "Supplier Account", "Ruby on Rails", "Allows suppliers to manage warehouses and orders")
+    Component(warehouse, "Warehouse", "Ruby on Rails", "Warehouse info and manage warehouse's orders")
+    Component(order, "Order", "Ruby on Rails", "Order information")
+    Component(tireagent_connection, "Tire Agent Connection", "Ruby on Rails", "Tire Agent Site Interface")
+    Component(portal_api, "API", "Ruby on Rails", "Backend Interface")
+    Component(bg_jobs, "Background Jobs", "Ruby on Rails", "Runtime for background tasks")
+    Component(shipments, "Shipments", "Ruby on Rails", "Shipments information")
 }
 
 Rel(ip_admin_panel, supplier, "Uses", "JSON/HTTPS")

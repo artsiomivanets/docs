@@ -16,8 +16,8 @@ Person(pp_admin, "PayPair Administrator", "Admin of PayPair system")
 Person(pp_user, "User", "A person who wants to buy tires, wheels by loan")
 
 System_Boundary(pp_system, "PayPair System") {
-    Container(pp_be_app, "PayPair Backend", "Ruby or Rails", "Provides PayPair functionality via JSON/HTTPS")
-    Container(pp_admin_panel, "PayPair Admin Panel", "Ruby or Rails + JS", "Allows admin manage users and offers")
+    Container(pp_be_app, "PayPair Backend", "Ruby on Rails", "Provides PayPair functionality via JSON/HTTPS")
+    Container(pp_admin_panel, "PayPair Admin Panel", "Ruby on Rails + JS", "Allows admin manage users and offers")
     Container(pp_fe_app, "PayPair Widget", "React.js", "Allows users get, check and choose loans")
     ContainerDb(db, "Database", "PostgresQL", "Stores user infomation, informations about user requests and provider's offers")
 

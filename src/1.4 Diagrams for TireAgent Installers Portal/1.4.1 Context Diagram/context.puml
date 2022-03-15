@@ -7,8 +7,8 @@ Person(super_admin, "Super Administrator", "Admin of Installer portal")
 Person(installer_admin, "Installer Administrator", "Admin of installer account")
 Person(employee, "Employee", "Tire Agent employee")
 
-Container(installer_portal, "Installer portal", "Ruby or Rails", "The system for scheduling, managing and installing appointments")
-Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+Container(installer_portal, "Installer portal", "Ruby on Rails", "The system for scheduling, managing and installing appointments")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 Rel(ta, installer_portal, "Send orders with installation option", "JSON/HTTPS")
 Rel(installer_portal, ta, "Update order's status with installation option", "JSON/HTTPS")

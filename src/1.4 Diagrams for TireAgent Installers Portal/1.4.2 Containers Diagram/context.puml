@@ -6,11 +6,11 @@ LAYOUT_WITH_LEGEND()
 Person(super_admin, "Super Administrator", "Admin of Installer Portal")
 Person(installer_admin, "Installer Administrator", "Admin of installer account")
 Person(employee, "Employee", "Tire Agent employee")
-Container(ta, "Tire Agent site", "Ruby or Rails + React.js", "The system for tire sales")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 System_Boundary(pp_system, "Installer Portal System") {
-    Container(ip_be_app, "Installer Portal Backend", "Ruby or Rails", "Provides Installer Portal functionality via JSON/HTTPS")
-    Container(ip_admin_panel, "Installer Portal Admin Panel", "Ruby or Rails", "Allows admin useres manage appointments")
+    Container(ip_be_app, "Installer Portal Backend", "Ruby on Rails", "Provides Installer Portal functionality via JSON/HTTPS")
+    Container(ip_admin_panel, "Installer Portal Admin Panel", "Ruby on Rails", "Allows admin useres manage appointments")
     ContainerDb(db, "Database", "PostgresQL", "Stores appointments and installers information")
 }
 
