@@ -1,0 +1,25 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(super_admin, "Super Administrator", "Admin of Installer Portal")
+Person(installer_admin, "Installer Administrator", "Admin of installer account")
+Person(employee, "Employee", "Tire Agent employee")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
+
+System_Boundary(pp_system, "Installer Portal System") {
+    Container(ip_be_app, "Installer Portal Backend", "Ruby on Rails", "Provides Installer Portal functionality via JSON/HTTPS")
+    Container(ip_admin_panel, "Installer Portal Admin Panel", "Ruby on Rails", "Allows admin useres manage appointments")
+    ContainerDb(db, "Database", "PostgresQL", "Stores appointments and installers information")
+}
+
+Rel(super_admin, ip_admin_panel, "Manage installers accounts")
+Rel(installer_admin, ip_admin_panel, "Manages installer's orders")
+Rel(employee, ip_admin_panel, "Manage all orders")
+Rel(ip_be_app, db, "Reads and writes", "Rails Active Record ORM")
+Rel(ip_admin_panel, ip_be_app, "Uses")
+Rel(ta, ip_be_app, "Send orders with installation option", "JSON/HTTPS")
+Rel(ip_be_app, ta, "Update order's status with installation option", "JSON/HTTPS")
+
+@enduml

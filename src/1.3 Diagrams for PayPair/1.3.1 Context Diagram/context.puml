@@ -6,14 +6,14 @@ LAYOUT_WITH_LEGEND()
 Person(pp_admin, "PayPair Administrator", "Admin of PayPair system")
 Person(pp_user, "User", "A person who wants to buy tires, wheels by loan")
 
-Container(pp_system, "PayPair", "Ruby or Rails + React.js", "The system for buying tires on credit")
-
+Container(pp_system, "PayPair", "Ruby on Rails + React.js", "The system for buying tires on credit")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
 
 Container(lenders, "Lenders", "List of lenders")
 
+Rel(ta, pp_system, "Send user and cart data", "JSON/HTTPS")
 Rel(pp_user, pp_system, "Requsts, views, compares, accepts loans")
 Rel(pp_admin, pp_system, "Manages users, lenders and offers")
 Rel(pp_system, lenders, "Gets offers", "JSON/HTTPS")
 
 @enduml
-

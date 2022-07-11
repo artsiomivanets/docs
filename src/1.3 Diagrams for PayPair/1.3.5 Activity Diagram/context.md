@@ -1,5 +1,3 @@
-# 1.3.5 Activity Diagram
-
 According to the flow, the process of obtaining a loan will be as follows:
 
 1. On the Tire Agent side, the User clicks on payment with PayPair. Tire Agent sends user info and cart info to PayPair.

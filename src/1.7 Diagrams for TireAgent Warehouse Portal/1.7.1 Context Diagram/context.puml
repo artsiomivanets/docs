@@ -1,0 +1,18 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(warehouse_america_user, "Warehouse America User", "User of Warehouse portal")
+Person(tireagent_user, "Tireagent User", "Tireagent Employee")
+
+Container(warehouse_portal, "Warehouse Portal", "Ruby on Rails", "The system to handle Warehouse America inventory")
+Container(tireagent, "Tire Agent", "Ruby on Rails", "The system to sale tires")
+
+Rel(warehouse_america_user, warehouse_portal, "Create and manage Inventory Units")
+Rel(tireagent_user, warehouse_portal, "Manage Inventory Units")
+
+Rel(tireagent, warehouse_portal, "Provide labels, validations, etc.", "JSON/HTTPS")
+Rel(warehouse_portal, tireagent, "Request to Generate labels", "JSON/HTTPS")
+
+@enduml

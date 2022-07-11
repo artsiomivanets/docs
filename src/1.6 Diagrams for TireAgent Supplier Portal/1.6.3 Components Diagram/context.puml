@@ -1,0 +1,44 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Container(ip_admin_panel, "Supplier Portal Admin Panel", "Ruby on Rails + Hotwire", "Allows admin manage suppliers and apointments")
+ContainerDb(db, "Database", "PostgresQL", "Stores warehouse and suppliers information")
+System_Ext(e_mail, "E-mail system", "System for sending emails")
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
+
+System_Boundary(ip_system, "Supplier Portal Backend System") {
+    Component(autentification, "Autentification", "Ruby on Rails", "Allows users to sign in, sign up and recovery password")
+    Component(supplier, "Supplier Account", "Ruby on Rails", "Allows suppliers to manage warehouses and orders")
+    Component(warehouse, "Warehouse", "Ruby on Rails", "Warehouse info and manage warehouse's orders")
+    Component(order, "Order", "Ruby on Rails", "Order information")
+    Component(tireagent_connection, "Tire Agent Connection", "Ruby on Rails", "Tire Agent Site Interface")
+    Component(portal_api, "API", "Ruby on Rails", "Backend Interface")
+    Component(bg_jobs, "Background Jobs", "Ruby on Rails", "Runtime for background tasks")
+    Component(shipments, "Shipments", "Ruby on Rails", "Shipments information")
+}
+
+Rel(ip_admin_panel, supplier, "Uses", "JSON/HTTPS")
+Rel(ip_admin_panel, autentification, "Uses", "JSON/HTTPS")
+Rel(autentification, bg_jobs, "Send registration emails")
+Rel(bg_jobs, e_mail, "Sends emails")
+
+Rel(supplier, order, "Uses")
+Rel(supplier, warehouse, "Uses")
+Rel(warehouse, order, "Uses")
+Rel(order, tireagent_connection, "Update order status callback")
+
+Rel(portal_api, order, "Populate orders and update order status")
+Rel(shipments, tireagent_connection, "Fetch data")
+
+Rel(tireagent_connection, ta, "Interacting with Tire Agent Site by API", "JSON/HTTPS")
+Rel(ta, portal_api, "Interacting with backend", "JSON/HTTPS")
+
+Rel(autentification, db, "Reads and writes", "Rails Active Record ORM")
+Rel(supplier, db, "Reads and writes", "Rails Active Record ORM")
+Rel(order, db, "Reads and writes", "Rails Active Record ORM")
+Rel(warehouse, db, "Reads and writes", "Rails Active Record ORM")
+
+@enduml

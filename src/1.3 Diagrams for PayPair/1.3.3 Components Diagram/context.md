@@ -1,14 +1,19 @@
-**Level 2: Container diagram**
+API application is a monolith application based on Ruby/Ruby on Rails. API application can be divided into two parts: Admin Panel and Backend Part. Backend logic is separated using [Interactors](https://github.com/collectiveidea/interactor). It means that the functionality of the system is divided into related parts according to the [High cohesion and low coupling](https://enterprisecraftsmanship.com/posts/cohesion-coupling-difference/) principle (the same principles are followed by microservices architecture pattern).
 
-Once you understand how your system fits in to the overall IT environment, a really useful next step is to zoom-in to the system boundary with a Container diagram. A "container" is something like a server-side web application, single-page application, desktop application, mobile app, database schema, file system, etc. Essentially, a container is a separately runnable/deployable unit (e.g. a separate process space) that executes code or stores data.
+API application consists of the following parts:
 
-The Container diagram shows the high-level shape of the software architecture and how responsibilities are distributed across it. It also shows the major technology choices and how the containers communicate with one another. It's a simple, high-level technology focussed diagram that is useful for software developers and support/operations staff alike.
+Autentification (Ruby on Rails). This module is responsible for Admin sign-in/sign up. [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) will be Admin for user authentication purposes.
 
-**Scope**: A single software system.
+User (Ruby on Rails). This module is responsible for user creating, searching existing users, checking previous approvals, authorizing etc.
 
-**Primary elements**: Containers within the software system in scope.
-Supporting elements: People and software systems directly connected to the containers.
+Otp Service (Ruby on Rails). This module is responsible for sending OTP code to users by SMS. Module can use two sms providers. These providers are managed by the administrator.
 
-**Intended audience**: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+Providers (Ruby on Rails). This module is responsible for building requests to lenders, response This module is responsible for, creating offers data. ect.
 
-**Notes**: This diagram says nothing about deployment scenarios, clustering, replication, failover, etc.
+Merchants (Ruby on Rails). This module is responsible for Admin functionality - creating admins, managing providers, checking offers and users, ect.
+
+Providers client (Ruby on Rails). This module is responsible for sending requests to providers.
+
+Lease Applications (Ruby on Rails). This module is responsible for storing users requests, calculating taxes.
+
+Report Service (Ruby on Rails). This module is responsible for creating different reports -  new users report, approved offers report, ect.

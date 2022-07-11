@@ -1,8 +1,12 @@
+<<<<<<< HEAD:docs/1.3 Diagrams for PayPair/1.3.4 Entity Diagram/HOME.md
 # 1.3.4 Entity Diagram
 
 Entity diagram describes entities in the system and relations between them.
 
 Merchant. This entity represents merchant account. It is company which use PayPaid. Each merchant has personal agreements with creditors, settings.
+=======
+**Level 2: Container diagram**
+>>>>>>> master:src/1.6 Diagrams for TireAgent Supplier Portal/1.6.1 Context Diagram/context.md
 
 Admin. This entity represents an employee who manages customers (users), creditors, offers and approvals
 

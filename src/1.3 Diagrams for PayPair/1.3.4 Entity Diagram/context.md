@@ -1,5 +1,3 @@
-# 1.3.4 Entity Diagram
-
 Entity diagram describes entities in the system and relations between them.
 
 Merchant. This entity represents merchant account. It is company which use PayPaid. Each merchant has personal agreements with creditors, settings.

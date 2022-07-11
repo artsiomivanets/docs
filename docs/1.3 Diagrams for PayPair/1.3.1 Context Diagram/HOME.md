@@ -1,18 +1,18 @@
 # 1.3.1 Context Diagram
 
-![diagram](https://www.plantuml.com/plantuml/svg/0/JL7DKi8m4BxtALPEE6fxyUH91ntGATYfPHnFpD8kD4v8QhAHuUtTb2ASqkn-lysZPtGSTZgvKgRMeI5ecJl_a6KEz-bMSHlMmPEhhM4odDPsbs7Z59fV7RgGJUxl2es6b_CyqyZaMKQhYQ1H6N9f5xMJ_EdhVLcjFb-hsIf_cRuidiVNILAGyzQCksw5pKwPMnWLU2XGENYAT-NP8LitaaK_0Bk14y8VFDDkT7qX4cCAT2b7Ju6kNy6-jR2NY1xOmZeSW9KZVojp8krXVG1jqOXKyXyxoXqTpg6YPXa4RHsKg8Hv0oLXpUctZxkgfI4LR0GYHifiZruWAMf7ZUBeSc6ZoJGIKjZvyIiAvL8yLXsMaLAIFZUyp5RIJ_0i0h-AzdB8ytJOjyEwfauwnsvHOv0O_lIbnXmDRYLaL1VYO0je6acnEIOOs2VEEVUKn6E0oVNjutsHpQgg-8Yn7mNMl_yV)
+![diagram](https://www.plantuml.com/plantuml/svg/0/bL9DJ-Cm4BtdLmmzWM2R2oTEL2o2HG6YD1NYL4sJQUkLQmTxJDL_pqmQQE76AOxdVVdPrv4nSDhOxCIungQMOCtSnQiy3xWThmolqo952ertJ8x7ZT_as0Q3xjscBkKtbtzAYuvdZqLkaIcoRCrl18t6KHXtgfqLazVdMJr_-LVVpulRkzkdlwTdMLPIYDwTTjqSsurn5p0gSLUY2J3HVnCv8Fimaa6_0Nu9duYuYqoRqTcHYCOKw4m-FGMwVWJRjOUjH8p07XPf1sm2nGlP9x8H5Zkm7fr8PL-nLMxlS0YbcbKIj4XMQ8Hv3XLXm-F_KMVrcePKiFH1ZOnRxRsKqWHg3OlBmOHHQGA0oKgwXMYOVkcYyX3HKloUtv9hvVH2AFOhvHRIg7Ou39LHaUrZ79ztAcFGCW5bqSZxW1OPLU5X-loKtzTrEHMoShzgFnQew2r55lDtGrlvo9lfiAyScuOwkGWjF1uaXki_rdX4XojfJjM5E4Jk4_dbSfz-O7zo3cU-8_4OO3zJPzS2qqVv0G00)
 
-**Level 2: Container diagram**
+Persons:
 
-Once you understand how your system fits in to the overall IT environment, a really useful next step is to zoom-in to the system boundary with a Container diagram. A "container" is something like a server-side web application, single-page application, desktop application, mobile app, database schema, file system, etc. Essentially, a container is a separately runnable/deployable unit (e.g. a separate process space) that executes code or stores data.
+The system used by User and PayPair Admin
 
-The Container diagram shows the high-level shape of the software architecture and how responsibilities are distributed across it. It also shows the major technology choices and how the containers communicate with one another. It's a simple, high-level technology focussed diagram that is useful for software developers and support/operations staff alike.
+**User** is person in system who requested loans. User enters personal data. Then user sees all the loan offers, user can look at each of them, compare and choose the most suitable option.
 
-**Scope**: A single software system.
+**PayPair Admin** is person in system who manage users, lenders and loans. The administrator can manage lenders. It can enable/disable lenders. Can view all loan applications and lender survey results. Can cancel or make a partial refund. View analytics
 
-**Primary elements**: Containers within the software system in scope.
-Supporting elements: People and software systems directly connected to the containers.
 
-**Intended audience**: Technical people inside and outside of the software development team; including software architects, developers and operations/support staff.
+Third-parties Services
 
-**Notes**: This diagram says nothing about deployment scenarios, clustering, replication, failover, etc.
+**Tire Agent site** is sends information about user: first name, last name, address, phone number, ect, and cadt details. PayPaid uses this data to bould request to lenders.
+
+**Lenders** is companies to provide loans for users. 

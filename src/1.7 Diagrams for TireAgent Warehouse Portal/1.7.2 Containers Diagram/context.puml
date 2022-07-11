@@ -1,0 +1,24 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(warehouse_america_user, "Warehouse America User", "User of Warehouse portal")
+Person(tireagent_user, "Tireagent User", "Tireagent Employee")
+
+Container(ta, "Tire Agent site", "Ruby on Rails + React.js", "The system for tire sales")
+
+System_Boundary(pp_system, "Warehouse Portal System") {
+    Container(ip_be_app, "Warehouse Portal Backend", "Ruby on Rails", "Provides Warehouse Portal functionality via JSON/HTTPS")
+    Container(ip_dashboard, "Warehouse Portal Dashboard", "Ruby on Rails + React.js", "Allows users manage inventory units")
+    ContainerDb(db, "Database", "PostgresQL", "Stores inventory units, warehouses and shipments information")
+}
+
+Rel(warehouse_america_user, ip_dashboard, "Creates and manages Inventory Units")
+Rel(tireagent_user, ip_dashboard, "Manages Inventory Units")
+Rel(ip_be_app, db, "Reads and writes", "Rails Active Record ORM")
+Rel(ip_dashboard, ip_be_app, "Uses")
+Rel(ta, ip_be_app, "Provide generated shipment labels", "JSON/HTTPS")
+Rel(ta, ip_dashboard, "Provide validations", "JSON/HTTPS")
+
+@enduml
