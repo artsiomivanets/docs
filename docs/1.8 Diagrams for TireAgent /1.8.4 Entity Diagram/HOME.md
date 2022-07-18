@@ -1,4 +1,4 @@
-# 1.7.4 Entity Diagram
+# 1.8.4 Entity Diagram
 
 Entity diagram describes entities in the system and relations between them.
 
