@@ -1,0 +1,25 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(suppleir_portal_user, "Suppplier User", "Suppplier's Employee")
+Person(suppleir_portal_admin, "Tireagent Suppplier User", "Tireagent Employee")
+Person(tireagent_admin, "Tireagent Admin", "Tireagent Employee")
+Person(tireagent_user, "Tireagent User", "Tireagent' Client")
+
+Container(tireagent, "Tire Agent", "Ruby on Rails", "The system to sale tires")
+Container(supplier_portal, "Suppplier Portal", "Ruby on Rails", "The system to accumulate suppliers")
+Container(paypair, "PayPair", "Ruby on Rails + React", "The system to find appropriate lender")
+
+Rel(tireagent_user, tireagent, "Find and buy Tires/Wheels/Accessories")
+Rel(tireagent_admin, tireagent, "Manage Orders")
+Rel(suppleir_portal_admin, supplier_portal, "Help Supplier's Users")
+Rel(suppleir_portal_user, supplier_portal, "Apply/Decline Orders")
+
+Rel(tireagent, supplier_portal, "Provides products to supply info", "JSON/HTTPS")
+Rel(supplier_portal, tireagent, "Provides order/delivery/etc., info", "JSON/HTTPS")
+Rel(tireagent, paypair, "Request for loan", "JSON/HTTPS")
+Rel(paypair, tireagent, "Loan", "JSON/HTTPS")
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+skinparam rectangle<<test>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+    BackgroundColor #FFFFFF
+}
+
+Person(ta_admin, "Tireagent Administrator", "Tireagent's Admin")
+Person(ta_user, "User", "A person who wants to buy tires, wheels, accessories for vehicle")
+
+System_Boundary(ta_system, "Tireagent System") {
+    Container(ta_site, "Tireagent Site", "Ruby on Rails + React", "Provides an ability to buy tires, wheels, accessories with a different payment methods")
+    Container(ta_admin_panel, "Tireagent Admin Panel", "Ruby on Rails", "Allows admin manage users, orders, shipments, fulfillemnts, payments, refunds, etc. ")
+    ContainerDb(db, "Database", "PostgresQL", "Stores users, orders, shipments, payments, fulfillemnts information and so on.")
+}
+
+Rel(ta_user, ta_site, "Looking for a products. Making an order. Paying for it.")
+Rel(ta_admin, ta_admin_panel, "Manages users, orders, payments, etc., ")
+Rel(ta_site, db, "Reads and writes", "Rails Active Record ORM")
+Rel(ta_admin_panel, ta_site, "Manage", "Manges an abilities to show/hide products/deliver methdos/payments")
+Rel(ta_admin_panel, db, "Reads and writes", "Rails Active Record ORM")
+
+@enduml
+

@@ -3,8 +3,10 @@
 
 LAYOUT_WITH_LEGEND()
 
-Person(warehouse_america_user, "Warehouse America User", "User of Warehouse portal")
-Person(tireagent_user, "Tireagent User", "Tireagent Employee")
+Person(tireagent_user, "Tireagent User", "Tireagent's User")
+Person(tireagent_admin, "Tireagent Admin", "Tireagent's Admin")
+Person(supplier_portal_user, "Supplier Poratl User", "Supplier's Company Employee")
+Person(isntaller_portal_user, "Installer Portal User", "Installer's Company Employee")
 
 Container(warehouse_portal, "Warehouse Portal", "Ruby on Rails", "The system to handle Warehouse America inventory")
 Container(tireagent, "Tire Agent", "Ruby on Rails", "The system to sale tires")
