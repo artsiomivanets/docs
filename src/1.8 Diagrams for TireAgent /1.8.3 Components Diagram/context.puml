@@ -4,48 +4,32 @@
 
 LAYOUT_WITH_LEGEND()
 
-Container(ta_fe_ata, "Tireagent application", "Ruby on Rails + React", "Provides all functionality of the Tireagent to end-user via browser")
-Container(ta_admin_panel, "Tireagent Admin Panel", "Ruby on Rails", "Allows admin manage orders")
+Container(supplier_portal, "Supplier Portal", "Ruby on Rails", "Provides all available suppleirs for Tireagent")
 ContainerDb(db, "Database", "PostgresQL", "Stores all infomation")
-System_Ext(lenders, "Lenders", "API of different creditors")
-System_Ext(sendgrid, "Sms system", "System for sending email")
+System_Ext(paypair, "PayPair", "Loans provider")
+System_Ext(supplier_portal, "Supplier Portal", "Supplier Portal")
+System_Ext(sendgrid, "Email system", "System to send emails")
 System_Ext(amazon, "Amazon S3", "Storage")
+System_Ext(allstate, "Allstate Protection", "Warranty")
+System_Ext(extend, "Extend Protection", "Warranty")
 
-System_Boundary(ta_system, "Tireagent Backend System") {
-    Component(providers, "Providers", "Ruby on Rails", "Communicates with lenders. Sends requests, receives and processes offers")
-    Component(users, "Users", "Ruby on Rails", "Allows users to create their loans")
-    Component(merchants, "Merchants", "Ruby on Rails", "Allows admin to manage lenders, offers")
-    Component(lease_atalications, "Lease Atalications", "Ruby on Rails", "description")
-    Component(provider_clients, "Providers client", "Ruby on Rails", "Sends requests to providers")
-    Component(autentification, "Autentification", "Ruby on Rails", "Determines if this is a new or returning user")
-    Component(opt, "Otp Service", "Ruby on Rails")
-    Component(report, "Report Service", "Ruby on Rails", "Send reports")
+System_Boundary(ta_system, "Tireagent System") {
+    Component(orders, "Orders", "Ruby on Rails", "Orders managing")
+    Component(shipments, "Shipments", "Ruby on Rails", "Shipments managing")
+    Component(payments, "Payments", "Ruby on Rails", "Payments managing")
+    Component(fulfillments, "Fulfillments", "Ruby on Rails", "Fulfillment managing")
+    Component(warehouses, "Warehouses", "Ruby on Rails", "Warehosues managing")
+    Component(products, "Products", "Ruby on Rails", "Products admin panel")
+    Component(settings, "Settings", "Ruby on Rails", "Settings for any entity on the site")
+    Component(reports, "Repports", "Ruby on Rails", "Reports generating")
+    Component(users, "Users", "Ruby on Rails", "Users managing")
 }
 
-Rel(provider_clients, lenders, "Gets offers form providers", "JSON/HTTPS")
-Rel(opt, sms, "Uses", "JSON/HTTPS")
-
-Rel(ta_fe_ata, users, "Uses", "JSON/HTTPS")
-Rel(ta_fe_ata, providers, "Uses", "JSON/HTTPS")
-Rel(ta_fe_ata, lease_atalications, "Uses", "JSON/HTTPS")
-Rel(ta_fe_ata, autentification, "Uses", "JSON/HTTPS")
-Rel(users, opt, "Uses", "JSON/HTTPS")
-
-Rel(ta_admin_panel, merchants, "Uses", "JSON/HTTPS")
-Rel(ta_admin_panel, users, "Uses", "JSON/HTTPS")
-Rel(ta_admin_panel, providers, "Uses", "JSON/HTTPS")
-Rel(ta_admin_panel, lease_atalications, "Uses", "JSON/HTTPS")
-Rel(ta_admin_panel, autentification, "Uses", "JSON/HTTPS")
-
-Rel(merchants, providers, "Uses", "Object call")
-
-Rel(providers, provider_clients, "Uses", "Object call")
-
-Rel(providers, db, "Reads and writes", "Rails Active Record ORM")
-Rel(users, db, "Reads and writes", "Rails Active Record ORM")
-Rel(lease_atalications, db, "Reads and writes", "Rails Active Record ORM")
-Rel(merchants, db, "Reads and writes", "Rails Active Record ORM")
-Rel(providers, db, "Reads and writes", "Rails Active Record ORM")
-Rel(autentification, db, "Reads and writes", "Rails Active Record ORM")
-Rel(report, amazon, "Users", "JSON/HTTPS")
+Rel(ta_system, amazon, "Store files, reports, images", "JSON/HTTPS")
+Rel(ta_system, db, "Store data", "Active Record (ORM)")
+Rel(fulfillments, supplier_portal, "Communication to fulfill order for specific supplier", "JSON/HTTPS")
+Rel(orders, sendgrid, "Sending emails on completing order, delivery status changing etc.,", "JSON/HTTPS")
+Rel(orders, allstate, "Creating allstate contract if needed", "JSON/HTTPS")
+Rel(orders, extend, "Creating extend contract if needed", "JSON/HTTPS")
+Rel(orders, paypair, "Making loan to pay for order", "JSON/HTTPS")
 @enduml

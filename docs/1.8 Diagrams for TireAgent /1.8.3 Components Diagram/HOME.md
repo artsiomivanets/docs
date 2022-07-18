@@ -1,19 +1,32 @@
 # 1.8.3 Components Diagram
 
-![diagram](https://www.plantuml.com/plantuml/svg/0/jLLDRzim3BtxLt0zfLYRN7RQQMaQh2tIDii7YfqCscOTjRPaI7AoODX_7oNdmuuT32Ymd1I9VAJUUwA_6OlQbdaMV18opig4O6LjORuE1Xet_LJOLHcLXdIif2Lf-x7A1vXeWNATbKKv67svdcOexV9nCiZGah6y5Ouu6eKatI_-0tPUAEdYFNOm6VvyNYx2b_l5NJWPVny_tVOkW-3GGKyKOO9c5IdKoHLSlA2cbUAoC5NQOdR1UxCoseAIC4EH6VWCCyBOzj-CEnjccTeOS7qQo55YId0lrrnVwIqifR3cul9OxZRg9H6dtQB520qvYAaoDjLaVapSlpadaZd509G9p5UYo7dNW92lIkTeXPACFjyQItau_cLx5ERS9CEChzq2Z3_ok7u5d0U6P29a2kH26ktrB7BeGcY2OSgLm0XB_w9WiQ9T7OzkNRR1Z1polhSRLSe4zTRHNSLsS0qt6B-JksZLzINy3e1_1qbxM3edY5SH-xix_fixhLvR6bd5bqebKtXLBSh2awifLcjYlWiqPgDqmjqtYukz9679aZ1kKwFEqiqGhvklvYJbjsLBqrL6YPYgPBSw1-pEGEJik1Q6qm2TW24_7adnZgoQiAF3VYTyBNBE5c0xMjAl6BTB5Lww40lXc9xUTyBjXJqF4wNXcuhCBZRLpY_mm3kTUBEIDS_9-oqwnbiqxsr2DtkRrItN2NiqPFE1_Gc26MKdew8EkpJa0Hxcpq-3kyLYEkUiTahRlcSJMw57WkRCf66_fi9OxK-FBzcb7Y8Fmw3AE0HLdPsu-MWxtrC5LRjZo_sriDEpC_PR5WcFQU2tHNhdVeWnovo2-xRgTcgL736ifSxPM5ROTaL27r-MX-pknaywxqUUP6uQRlY30wU-PuFiFDrIo04qpDy2YohNjxAx1VRV1PwhINMXZURwbTdzp1qoy9fuyCRC7ppF7izm_q6Ocj8VG0Y-yJtTv_Ol)
+![diagram](https://www.plantuml.com/plantuml/svg/0/jPNDSjem483lVeej9pEJmg4zzPGqeKqx950Ca-c9MUm5D9KbZoIJk9s-UrUoSI2OJ7keJ-lz-IIjTbUNrg5nPIwZDqAbiim8jiuLziDmQF1ni15kMwvAIoRLof5oWrJdGyoCGBMJPL4Ehz-_dKfKRd4t7afqP1shbjViZKAH6HJ_WPqNMdd_m8x6LzydY_douSlyTZaUVHxTtyJzA6ft4DkoAAGWiooqSIWle9Sq6fW6JOzLit9LWLOmGo6jLqoDtecCBA2KW3jMuqeI11W9Os6j3So58TpmLdhzvmLlLd6sOi8DEboXfK3JrcqCsMzZ_vSuRHgoK6kTenDQCIAfhADyENfoSO5LWSBuKAocBFcuiKPbeQXtPeu3_kgKBrN715BPneYC_KOvdnTii8Mu887Ju9s0yf2besZCyQTMx7iL14ZUxK_A2NhXAYLNdIFlt8Z0wNQKXZom-W6DuNklZkFeYQiaR2y8vsFsGHzrgJ8qLUnmMH-6_TexWzghruTV4V3NrbMi3QVNikya29trKPiWHuKReJQywZ73RaMHi-0noLxk9BNMyp2kXZrhseZTHTiOpvFMfLmBAVUqJmU_dSG3X_FGHpIqrTp9jhw7vgSJM9jjIQyTr-YiJElZDkAv7Wr6m2mN2WfK94ylWfpZHS8zD6BtDJJ6qDYeAk1WuOAFstBZ2qSdR4E-spnwHaKGEz6psWsuwiYWwpgo7uEUix3d2YvO3dFsEufc90zhk-t1C620ByxVIBj9aNFT1zRNP78_l9tFfmbpNa32xAe16Kymxtx5JROZc57AdG7nP7RNR-AEo-bq1l41yrA9D4muFp-Q00Wj5b9j2qh5MgHjTES6zorvCAGI5ZaJpJJokUBtWuUpps_DvyEGv9sR2loKAIsaMrIR4EJImSMhAnrCgMkU686wru5_iGoc3iGQ5556sQkiTdArf5hphvpdL-4EVtYCv1V1fvKD8Pd1yGHnoKlvf_8F)
 
-API application is a monolith application based on Ruby/Ruby on Rails. Backend logic is separated using [Interactors](https://github.com/collectiveidea/interactor). It means that the functionality of the system is divided into related parts according to the [High cohesion and low coupling](https://enterprisecraftsmanship.com/posts/cohesion-coupling-difference/) principle (the same principles are followed by microservices architecture pattern).
+Tireagnet application is a monolith application based on Ruby/Ruby on Rails/Solidus. Solidus framework is used under the hood. It allows to start developing the main features fast without being distructed to e-commerce components. Authentication/Authorization/Admin panel included into Solidus framework.
 
-API application consists of the following parts:
+Tireagnet application consists of the following parts:
 
-Autentification (Ruby on Rails). This module is responsible for User sign-in/sign up. [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) will be User for user authentication purposes.
+Admin panel Autentification (Solidus). This module is responsible for Admin sign-in/sign up (based on Device)
 
-User (Ruby on Rails). This module is responsible for user and admin creating, authorizing etc.
+Admin panel Authorization (Solidus). This module is responsible to assign different roles to Admins (based on CanCanCan)
 
-Warehouse (Ruby on Rails). This module is responsible for storing information about warehouse and having Inventory Units.
+User (Solidus). This module is responsible for managing users.
 
-Inventory Units (Ruby on Rails). This module is responsible for storing information about units and their states.
+Role (Solidus). This module is responsible for managing roles for users.
 
-Invoice (Ruby on Rails). This module is responsible for storing invoice information for inventory units.
+Order (Solidus). This module is responsible for managing orders made by clients.
 
-Dashboard application is builded over [ReactJS](https://reactjs.org/) library.
+Shipment (Solidus). This module is responsible for managing shipments data.
+
+Fulfillment (Solidus). This module is responsible for displaying available suppliers+warehouses to supply current product in the cart.
+
+Order (Solidus). This module is responsible for managing orders made by clients.
+
+Product (Solidus). This module is responsible for managing products available for clients.
+
+Promotions (Solidus). This module is responsible for discounts available for clients.
+
+Payments (Solidus). This module is responsible for managing payments like refund/capture/void payment.
+
+Warehouses (Ruby on Rails). This module is responsible for all available warehouses for Tireagnet system.
+
