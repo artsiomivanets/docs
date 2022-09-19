@@ -3,14 +3,14 @@
 
 LAYOUT_WITH_LEGEND()
 
-Person(ta_admin, "Tire Apent Administrator", "A person who processes orders")
+Person(ta_admin, "Tire Agent Administrator", "A person who processes orders")
 Person(pp_admin, "PayPair Administrator", "A person who processes lenders and offers")
 Person(ip_admin, "Installers Portal Administrator", "A person who create new installers")
 Person(ip_manager, "Installer Manager", "A person who processes job request")
 Person(ta_user, "User", "A person who wants to buy tires, wheels, etc")
 
 System_Boundary(ta_system, "Tire Agent System") {
-    Container(ta_app, "Tire Apent Site", "", "")
+    Container(ta_app, "Tire Agent Site", "", "")
     Container(pp_app, "PayPair Widget", "", "")
     Container(ip_app, "Installers Portal", "", "")
     Container(sp_app, "Suppliers Portal", "", "")
@@ -18,8 +18,6 @@ System_Boundary(ta_system, "Tire Agent System") {
 
     Rel(ta_app, pp_app, "Redirects the user to apply for a loan", "Open Widget")
     Rel(ta_app, ip_app, "Send new job request", "")
-    Rel(ta_app, sp_app, "Something???", "")
-    Rel(ta_app, wp_app, "Something???", "")
 }
 
 Rel(ta_admin, ta_app, "Processes orders")
